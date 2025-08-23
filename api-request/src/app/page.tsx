@@ -18,8 +18,8 @@ export default function HomePage() {
 
   useEffect(() => {
     fetch('/api/latest').then(res => res.json()).then(data => setLatestMovies(data.results || []));
-    fetch('/api/most_viewed').then(res => res.json()).then(data => setMostViewed(data.results || []));
-    fetch('/api/last_added').then(res => res.json()).then(data => setLastAdded(data.results || []));
+    fetch('/api/mostViewed').then(res => res.json()).then(data => setMostViewed(data.results || []));
+    fetch('/api/latest').then(res => res.json()).then(data => setLastAdded(data.results || []));
     fetch('/api/action').then(res => res.json()).then(data => setActionMovies(data.results || []));
     fetch('/api/arabic').then(res => res.json()).then(data => setArabicMovies(data.results || []));
 
@@ -49,7 +49,6 @@ export default function HomePage() {
       case 'Most Viewed':
         return <MovieList movies={mostViewed} onAddToFavorites={addToFavorites} />;
       case 'Last Addition':
-    
         return <MovieList movies={lastAdded} onAddToFavorites={addToFavorites} />;
       case 'Action':
         return <MovieList movies={actionMovies} onAddToFavorites={addToFavorites} />;

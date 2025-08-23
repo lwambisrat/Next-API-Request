@@ -8,10 +8,11 @@ export default function Navbar() {
       <div className="flex items-center space-x-6">
         <Link href="/" className="text-yellow-400 font-semibold hover:text-yellow-300">Home</Link>
         <Link href="/favourites" className="hover:text-yellow-300">My list</Link>
-        <Link href="/new" className="hover:text-yellow-300">NEW</Link>
+        <Link href="/favourites" className="hover:text-yellow-300">NEW</Link>
         <Link href="/signin">
           <button className="bg-yellow-500 hover:bg-yellow-600 px-5 py-2 rounded">Sign In</button>
         </Link>
+        
       </div>
     </nav>
   );
