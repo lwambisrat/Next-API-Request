@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Navbar from '../components/navBar';
 
 
 export default function SignInPage() {
@@ -10,7 +9,7 @@ export default function SignInPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert(`Sign In clicked with email: ${email}`); // Replace with real auth logic
+    alert(`Sign In clicked with email: ${email}`); 
   };
 
   return (
