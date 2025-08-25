@@ -14,6 +14,6 @@ export async function GET() {
   );
 
   const data = await res.json();
-  // 'latest' endpoint returns a single movie; wrap in array for consistency
+  
   return NextResponse.json({ results: [data] });
 }

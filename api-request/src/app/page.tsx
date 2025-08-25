@@ -1,10 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import SearchBar from './components/searchBar';
 import CategoryTabs from './components/categoryTabs';
 import LatestSection from './components/latestSection';
 import MovieList from './components/movieList';
+import LatestMovieHighlight from './components/LatestMovieHighlight';
 
 export default function HomePage() {
   const [latestMovies, setLatestMovies] = useState<any[]>([]);
@@ -61,7 +61,7 @@ export default function HomePage() {
 
   return (
     <>
-      <SearchBar onSearch={handleSearch} />
+      <LatestMovieHighlight />
 
       {searchResults.length > 0 ? (
         <>
@@ -73,9 +73,10 @@ export default function HomePage() {
           <LatestSection movies={latestMovies} />
 
           <CategoryTabs
-            tabs={['All', 'Action', 'Comedy','Arabic','series','Adventure','Other']}
+            tabs={['All', 'Action', 'Comedy', 'Arabic', 'series', 'Adventure', 'Other']}
             active={activeTab}
             onChange={setActiveTab}
+            
           />
 
           {activeTab === 'All' ? (
